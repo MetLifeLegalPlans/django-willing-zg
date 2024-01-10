@@ -1,3 +1,4 @@
+from django.core import mail
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.conf import settings
@@ -9,7 +10,6 @@ class MailerError(Exception):
 
 class Mailer:
     """The Mailer class holds helper functions for sending template emails"""
-
 
     @classmethod
     def build_email(
@@ -60,6 +60,13 @@ class Mailer:
 
         return message
 
+    @classmethod
+    def send_mass_email(
+        cls,
+        messages,
+    ):
+        connection = mail.get_connection()
+        connection.send_messages(messages)
 
     @classmethod
     def send_email(
