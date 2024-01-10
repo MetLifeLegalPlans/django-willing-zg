@@ -10,8 +10,9 @@ class MailerError(Exception):
 class Mailer:
     """The Mailer class holds helper functions for sending template emails"""
 
+
     @classmethod
-    def send_email(
+    def build_email(
         cls,
         to_emails,
         subject,
@@ -56,6 +57,34 @@ class Mailer:
         if attachments:
             for item in attachments:
                 message.attach(*item)
+
+        return message
+
+
+    @classmethod
+    def send_email(
+        cls,
+        to_emails,
+        subject,
+        template,
+        context,
+        bcc=None,
+        attachments=None,
+        reply_to=None,
+        from_email=None,
+        headers=None,
+    ):
+        message = cls.build_email(
+            to_emails,
+            subject,
+            template,
+            context,
+            bcc=None,
+            attachments=None,
+            reply_to=None,
+            from_email=None,
+            headers=None,
+        )
 
         try:
             message.send()
