@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-willing-zg"
-version = "0.6.0"
+version = "0.7.0"
 description = ""
 readme = "README.md"
 authors = ["Bequest, Inc. <oss@willing.com>"]
@@ -9,18 +9,18 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.7,<4.0"
-django = ">=3.0.8,<5.0"
-djangorestframework = "^3.11.0"
-zygoat-django = ">=0.3"
-cryptography = ">=3.1,<40.0"
-djangorestframework-simplejwt = "^4.4.0"
+python = ">=3.8,<4.0"
+djangorestframework = "^3.14.0"
+zygoat-django = ">=1.0.1"
+cryptography = ">=42.0.2"
+djangorestframework-simplejwt = "^5.3.1"
 simplejwt-extensions = "^0.2.1"
+pytest = "^8.0.0"
+django = "^4.2.10"
 
 [tool.poetry.group.dev.dependencies]
 flake8-black = "^0.3.6"
-black = "^23.3.0"
-pytest = "^7.2.2"
+black = "^24.1.1"
 
 [tool.black]
 line-length = 95
