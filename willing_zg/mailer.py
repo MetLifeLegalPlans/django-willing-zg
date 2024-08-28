@@ -86,11 +86,11 @@ class Mailer:
             subject,
             template,
             context,
-            bcc=bcc or None,
-            attachments=attachments or None,
-            reply_to=reply_to or None,
-            from_email=from_email or None,
-            headers=headers or None,
+            bcc,
+            attachments,
+            reply_to,
+            from_email,
+            headers,
         )
 
         try:
